@@ -29,24 +29,24 @@
         <choerodon.asgard.version>0.19.1.RELEASE</choerodon.asgard.version>
     </properties>
 
-    <!--    <dependencyManagement>-->
-    <!--        <dependencies>-->
-    <!--            <dependency>-->
-    <!--                <groupId>org.activiti.dependencies</groupId>-->
-    <!--                <artifactId>activiti-dependencies</artifactId>-->
-    <!--                <version>${activiti-dependencies.version}</version>-->
-    <!--                <scope>import</scope>-->
-    <!--                <type>pom</type>-->
-    <!--            </dependency>-->
-    <!--            <dependency>-->
-    <!--                <groupId>org.springframework.cloud</groupId>-->
-    <!--                <artifactId>spring-cloud-dependencies</artifactId>-->
-    <!--                <version>Finchley.SR2</version>-->
-    <!--                <type>pom</type>-->
-    <!--                <scope>import</scope>-->
-    <!--            </dependency>-->
-    <!--        </dependencies>-->
-    <!--    </dependencyManagement>-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.activiti.dependencies</groupId>
+                <artifactId>activiti-dependencies</artifactId>
+                <version>${activiti-dependencies.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.SR2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
