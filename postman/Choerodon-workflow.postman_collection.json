@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "ed5122c8-efbc-4a30-bfc8-696b3bfba873",
+		"name": "Choerodon-workflow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6978248"
+	},
+	"item": [
+		{
+			"name": "create-workflow",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"OK\", function () {",
+							"  pm.response.to.have.status(204);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{url}}:8065/choerodon/v1/organizations/:org_id/organization_invoke_workflow/def_workflow/init",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "8065",
+					"path": [
+						"choerodon",
+						"v1",
+						"organizations",
+						":org_id",
+						"organization_invoke_workflow",
+						"def_workflow",
+						"init"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "org_id",
+							"value": "{{orgId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check-workflow",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"OK\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{url}}:8065/choerodon/v1/organizations/:org_id/organization_invoke_workflow/def_workflow/check_init",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "8065",
+					"path": [
+						"choerodon",
+						"v1",
+						"organizations",
+						":org_id",
+						"organization_invoke_workflow",
+						"def_workflow",
+						"check_init"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "org_id",
+							"value": "{{orgId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-proj-workflow",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"OK\", function () {",
+							"  pm.response.to.have.status(201);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"flowCode\": \"flowCode\",\n    \"id\": {{$randomInt}},\n    \"organizationId\": 1,\n    \"projectId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{url}}:8065/choerodon/v1/projects/:proj_id/project_workflow_rel",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "8065",
+					"path": [
+						"choerodon",
+						"v1",
+						"projects",
+						":proj_id",
+						"project_workflow_rel"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "proj_id",
+							"value": "{{projId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-proj-workflow",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"OK\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{url}}:8065/choerodon/v1/projects/:proj_id/project_workflow_rel/query",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "8065",
+					"path": [
+						"choerodon",
+						"v1",
+						"projects",
+						":proj_id",
+						"project_workflow_rel",
+						"query"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "proj_id",
+							"value": "{{projId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "orgId",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "projId",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
