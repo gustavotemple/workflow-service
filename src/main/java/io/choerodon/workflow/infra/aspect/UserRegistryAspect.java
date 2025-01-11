@@ -52,7 +52,7 @@ public class UserRegistryAspect {
      */
     @Before("userRegistry()")
     public void userRegistry(JoinPoint joinPoint) {
-        CustomUserDetails details = DetailsHelper.getUserDetails();
+        CustomUserDetails details = DetailsHelper.getAnonymousDetails();
         String activitiGroup = "Group_activiti" + details.getOrganizationId();
         String[] user = {details.getUserId().toString(), "password", "ROLE_ACTIVITI_USER", activitiGroup};
         List<String> authoritiesStrings = Arrays.asList(Arrays.copyOfRange(user, 2, user.length));

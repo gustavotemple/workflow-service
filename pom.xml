@@ -20,7 +20,7 @@
 
     <properties>
         <java.version>8</java.version>
-        <activiti-dependencies.version>7.0.109</activiti-dependencies.version>
+        <activiti-dependencies.version>7.0.0.SR1</activiti-dependencies.version>
         <choerodon.serviceBuild>true</choerodon.serviceBuild>
         <choerodon.mainClass>io.choerodon.workflow.WorkFlowServiceApplication</choerodon.mainClass>
         <hzero.version>1.6.1.RELEASE</hzero.version>
@@ -128,7 +128,7 @@
         <dependency>
             <groupId>org.activiti</groupId>
             <artifactId>activiti-bpmn-layout</artifactId>
-            <version>7.0.130</version>
+            <version>7.0.0.SR1</version>
         </dependency>
 
         <dependency>
